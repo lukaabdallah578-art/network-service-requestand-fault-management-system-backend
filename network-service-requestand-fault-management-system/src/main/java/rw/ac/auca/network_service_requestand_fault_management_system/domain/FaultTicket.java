@@ -4,7 +4,6 @@ import java.util.UUID;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "fault_ticket")
