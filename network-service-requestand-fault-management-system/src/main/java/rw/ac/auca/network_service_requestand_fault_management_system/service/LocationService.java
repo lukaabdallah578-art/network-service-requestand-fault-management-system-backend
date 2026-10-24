@@ -53,8 +53,4 @@ public class LocationService {
     return DELETED;
   }
 
-  public String save(Location location) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'save'");
-  }
 }
