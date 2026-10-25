@@ -53,4 +53,9 @@ public class RequesterService {
     return DELETED;
   }
 
+  // B1
+  public List<Requester> findByLastName(String lastName) {
+    return requesterRepository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+  }
+
 }

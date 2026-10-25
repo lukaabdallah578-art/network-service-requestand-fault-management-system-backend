@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.Requester;
 import rw.ac.auca.network_service_requestand_fault_management_system.service.RequesterService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api/requesters")
@@ -73,4 +74,13 @@ public class RequesterController {
       return ResponseEntity.status(HttpStatus.OK).body(message);
     }
   }
+
+  // B1
+  @GetMapping("/bylast-name")
+
+  public ResponseEntity<?> findByLastName(@RequestParam String lastName) {
+    List<Requester> requesters = requesterService.findByLastName(lastName);
+    return ResponseEntity.ok(requesters);
+  }
+
 }
