@@ -8,6 +8,7 @@ import rw.ac.auca.network_service_requestand_fault_management_system.domain.Requ
 
 public interface RequesterRepository extends JpaRepository<Requester, UUID> {
 
+  // B1
   List<Requester> findByLastNameIgnoreCaseOrderByFirstNameAsc(String lastName);
 
 }

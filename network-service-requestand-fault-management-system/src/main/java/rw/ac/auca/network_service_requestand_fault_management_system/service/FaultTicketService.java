@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.FaultTicket;
+import rw.ac.auca.network_service_requestand_fault_management_system.domain.TicketStatus;
 import rw.ac.auca.network_service_requestand_fault_management_system.repository.FaultTicketRepository;
 
 @Service
@@ -53,4 +54,8 @@ public class FaultTicketService {
     return DELETED;
   }
 
+  // B2
+  public List<FaultTicket> findByStatus(TicketStatus status) {
+    return faultTicketRepository.findByStatusOrderByReportDateAsc(status);
+  }
 }

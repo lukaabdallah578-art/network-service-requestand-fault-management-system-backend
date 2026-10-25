@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.FaultTicket;
+import rw.ac.auca.network_service_requestand_fault_management_system.domain.TicketStatus;
 import rw.ac.auca.network_service_requestand_fault_management_system.service.FaultTicketService;
 
 @RestController
@@ -64,4 +65,12 @@ public class FaultTicketController {
       return ResponseEntity.status(HttpStatus.OK).body(message);
     }
   }
+
+  // B2
+  @GetMapping("/by-status")
+  public ResponseEntity<List<FaultTicket>> findTicketsByStatus(@RequestParam TicketStatus status) {
+    List<FaultTicket> tickets = faultTicketService.findByStatus(status);
+    return ResponseEntity.ok(tickets);
+  }
+
 }
