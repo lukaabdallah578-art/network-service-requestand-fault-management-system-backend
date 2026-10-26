@@ -1,5 +1,6 @@
 package rw.ac.auca.network_service_requestand_fault_management_system.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 import java.util.Optional;
@@ -70,6 +71,15 @@ public class FaultTicketController {
   @GetMapping("/by-status")
   public ResponseEntity<List<FaultTicket>> findTicketsByStatus(@RequestParam TicketStatus status) {
     List<FaultTicket> tickets = faultTicketService.findByStatus(status);
+    return ResponseEntity.ok(tickets);
+  }
+
+  // B3
+  @GetMapping("/between")
+  public ResponseEntity<List<FaultTicket>> findTicketsBetween(@RequestParam String start, @RequestParam String end) {
+    LocalDate startDate = LocalDate.parse(start);
+    LocalDate endDate = LocalDate.parse(end);
+    List<FaultTicket> tickets = faultTicketService.findTicketsBetween(startDate, endDate);
     return ResponseEntity.ok(tickets);
   }
 

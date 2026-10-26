@@ -1,5 +1,6 @@
 package rw.ac.auca.network_service_requestand_fault_management_system.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -57,5 +58,10 @@ public class FaultTicketService {
   // B2
   public List<FaultTicket> findByStatus(TicketStatus status) {
     return faultTicketRepository.findByStatusOrderByReportDateAsc(status);
+  }
+
+  // B3
+  public List<FaultTicket> findTicketsBetween(LocalDate start, LocalDate end) {
+    return faultTicketRepository.findByReportDateBetweenOrderByReportDateAsc(start, end);
   }
 }

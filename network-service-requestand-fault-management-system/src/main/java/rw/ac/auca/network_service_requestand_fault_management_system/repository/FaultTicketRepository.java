@@ -1,6 +1,7 @@
 package rw.ac.auca.network_service_requestand_fault_management_system.repository;
 
 import java.util.UUID;
+import java.time.LocalDate;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -11,5 +12,8 @@ public interface FaultTicketRepository extends JpaRepository<FaultTicket, UUID> 
 
   // B2
   List<FaultTicket> findByStatusOrderByReportDateAsc(TicketStatus status);
+
+  // B3
+  List<FaultTicket> findByReportDateBetweenOrderByReportDateAsc(LocalDate start, LocalDate end);
 
 }
