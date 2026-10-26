@@ -4,10 +4,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.Requester;
 import rw.ac.auca.network_service_requestand_fault_management_system.repository.RequesterRepository;
+import rw.ac.auca.network_service_requestand_fault_management_system.repository.TechnicianRepository;
 
 @Service
 public class RequesterService {
@@ -18,9 +21,11 @@ public class RequesterService {
   public static final String UPDATED = "Requester updated successfully";
 
   private final RequesterRepository requesterRepository;
+  private final TechnicianRepository technicianRepository;
 
-  public RequesterService(RequesterRepository requesterRepository) {
+  public RequesterService(RequesterRepository requesterRepository, TechnicianRepository technicianRepository) {
     this.requesterRepository = requesterRepository;
+    this.technicianRepository = technicianRepository;
   }
 
   public String save(Requester requester) {
@@ -56,6 +61,14 @@ public class RequesterService {
   // B1
   public List<Requester> findByLastName(String lastName) {
     return requesterRepository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+  }
+
+  // C4
+  public Optional<List<Requester>> searchRequestersOfTechnician(UUID technicianId) {
+    if (!technicianRepository.existsById(technicianId)) {
+      return Optional.empty();
+    }
+    return Optional.of(requesterRepository.searchRequestersOfTechnician(technicianId));
   }
 
 }

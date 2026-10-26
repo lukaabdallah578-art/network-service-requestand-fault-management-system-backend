@@ -77,10 +77,19 @@ public class RequesterController {
 
   // B1
   @GetMapping("/bylast-name")
-
   public ResponseEntity<?> findByLastName(@RequestParam String lastName) {
     List<Requester> requesters = requesterService.findByLastName(lastName);
     return ResponseEntity.ok(requesters);
+  }
+
+  // C4
+  @GetMapping("/oftechnician/{technicianId}")
+  public ResponseEntity<?> findRequestersOfTechnician(@PathVariable UUID technicianId) {
+    Optional<List<Requester>> requesters = requesterService.searchRequestersOfTechnician(technicianId);
+    if (requesters.isEmpty()) {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The technician with that id does not exist");
+    }
+    return ResponseEntity.ok(requesters.get());
   }
 
 }
