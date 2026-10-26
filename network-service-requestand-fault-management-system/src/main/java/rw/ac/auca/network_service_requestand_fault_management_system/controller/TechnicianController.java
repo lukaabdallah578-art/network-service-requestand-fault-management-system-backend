@@ -3,11 +3,13 @@ package rw.ac.auca.network_service_requestand_fault_management_system.controller
 import java.util.List;
 import java.util.UUID;
 import java.util.Optional;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.Technician;
 import rw.ac.auca.network_service_requestand_fault_management_system.service.TechnicianService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api/technicians")
@@ -63,5 +65,12 @@ public class TechnicianController {
     } else {
       return ResponseEntity.status(HttpStatus.OK).body(message);
     }
+  }
+
+  // C1
+  @GetMapping("/by-expertise")
+  public ResponseEntity<List<Technician>> findTechniciansByExpertise(@RequestParam String name) {
+    List<Technician> technicians = technicianService.findTechniciansByExpertise(name);
+    return ResponseEntity.ok(technicians);
   }
 }

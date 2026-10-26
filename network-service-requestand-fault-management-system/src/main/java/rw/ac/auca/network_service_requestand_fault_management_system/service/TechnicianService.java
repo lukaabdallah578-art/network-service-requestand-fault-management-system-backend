@@ -53,4 +53,9 @@ public class TechnicianService {
     return DELETED;
   }
 
+  // C1
+  public List<Technician> findTechniciansByExpertise(String name) {
+    return technicianRepository.findByExpertiseName(name);
+  }
+
 }
