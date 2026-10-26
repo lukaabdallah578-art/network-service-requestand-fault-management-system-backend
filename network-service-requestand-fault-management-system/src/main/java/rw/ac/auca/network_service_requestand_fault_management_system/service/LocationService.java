@@ -53,4 +53,9 @@ public class LocationService {
     return DELETED;
   }
 
+  // C2
+  public List<Location> searchFreeLocations() {
+    return locationRepository.searchFreeLocation();
+  }
+
 }

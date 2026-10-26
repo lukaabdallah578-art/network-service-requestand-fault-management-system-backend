@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rw.ac.auca.network_service_requestand_fault_management_system.service.LocationService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api/locations")
@@ -65,5 +67,12 @@ public class LocationController {
     } else {
       return ResponseEntity.status(HttpStatus.OK).body(message);
     }
+  }
+
+  // C2
+  @GetMapping("/free")
+  public ResponseEntity<List<Location>> findFreeLocations() {
+    List<Location> freeLocations = locationService.searchFreeLocations();
+    return ResponseEntity.ok(freeLocations);
   }
 }
