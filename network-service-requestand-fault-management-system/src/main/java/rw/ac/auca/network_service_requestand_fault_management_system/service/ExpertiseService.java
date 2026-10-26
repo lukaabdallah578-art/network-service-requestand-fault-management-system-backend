@@ -53,4 +53,9 @@ public class ExpertiseService {
     return DELETED;
   }
 
+  // C3
+  public List<Expertise> searchUnusedExpertises() {
+    return expertiseRepository.searchUnusedExpertises();
+  }
+
 }
