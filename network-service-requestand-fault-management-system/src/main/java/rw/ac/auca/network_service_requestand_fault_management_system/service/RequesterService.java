@@ -4,10 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
-
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.Requester;
 import rw.ac.auca.network_service_requestand_fault_management_system.repository.RequesterRepository;
 import rw.ac.auca.network_service_requestand_fault_management_system.repository.TechnicianRepository;
