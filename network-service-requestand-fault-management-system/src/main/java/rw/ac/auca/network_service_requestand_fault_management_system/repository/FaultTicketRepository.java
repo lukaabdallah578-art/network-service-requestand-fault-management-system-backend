@@ -16,4 +16,7 @@ public interface FaultTicketRepository extends JpaRepository<FaultTicket, UUID> 
   // B3
   List<FaultTicket> findByReportDateBetweenOrderByReportDateAsc(LocalDate start, LocalDate end);
 
+  // D1
+  boolean existsByTechnicianIdAndReportDateAndStatusNot(UUID technicianId, LocalDate reportDate, TicketStatus status);
+
 }

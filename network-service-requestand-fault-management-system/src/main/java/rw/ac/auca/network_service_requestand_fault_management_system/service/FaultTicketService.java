@@ -19,13 +19,33 @@ public class FaultTicketService {
   public static final String DELETED = "Fault ticket deleted successfully";
   public static final String UPDATED = "Fault ticket updated successfully";
 
+  // D1
+  public static final String PAST_DATE_MESSAGE = "Fault ticket date cannot be in the past";
+  public static final String TECHNICIAN_BUSY_MESSAGE = "Technician already has a ticket assigned on that date";
+
   private final FaultTicketRepository faultTicketRepository;
 
   public FaultTicketService(FaultTicketRepository faultTicketRepository) {
     this.faultTicketRepository = faultTicketRepository;
   }
 
+  // D1
   public String save(FaultTicket faultTicket) {
+    if (faultTicket.getReportDate().isBefore(LocalDate.now())) {
+      return PAST_DATE_MESSAGE;
+    }
+
+    boolean hasConflict = false;
+    if (faultTicket.getTechnician() != null && faultTicket.getTechnician().getId() != null) {
+      hasConflict = faultTicketRepository.existsByTechnicianIdAndReportDateAndStatusNot(
+          faultTicket.getTechnician().getId(),
+          faultTicket.getReportDate(),
+          TicketStatus.CANCELLED);
+    }
+    if (hasConflict) {
+      return TECHNICIAN_BUSY_MESSAGE;
+    }
+    faultTicket.setStatus(TicketStatus.OPEN);
     faultTicketRepository.save(faultTicket);
     return SAVED;
   }
@@ -64,4 +84,5 @@ public class FaultTicketService {
   public List<FaultTicket> findTicketsBetween(LocalDate start, LocalDate end) {
     return faultTicketRepository.findByReportDateBetweenOrderByReportDateAsc(start, end);
   }
+
 }

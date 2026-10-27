@@ -24,7 +24,14 @@ public class FaultTicketController {
   @PostMapping("/save")
   public ResponseEntity<?> save(@RequestBody FaultTicket faultTicket) {
     String message = faultTicketService.save(faultTicket);
-    return ResponseEntity.status(HttpStatus.CREATED).body(message);
+    // D1
+    if (message.equals(FaultTicketService.PAST_DATE_MESSAGE)) {
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
+    } else if (message.equals(FaultTicketService.TECHNICIAN_BUSY_MESSAGE)) {
+      return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
+    } else {
+      return ResponseEntity.status(HttpStatus.CREATED).body(message);
+    }
   }
 
   @GetMapping("/all")
