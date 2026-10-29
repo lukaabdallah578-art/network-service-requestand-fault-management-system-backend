@@ -31,12 +31,14 @@ public class FaultTicketService {
 
   // D1
   public String save(FaultTicket faultTicket) {
+
     if (faultTicket.getReportDate().isBefore(LocalDate.now())) {
       return PAST_DATE_MESSAGE;
     }
 
     boolean hasConflict = false;
-    if (faultTicket.getTechnician() != null && faultTicket.getTechnician().getId() != null) {
+    if (faultTicket.getTechnician() != null &&
+        faultTicket.getTechnician().getId() != null) {
       hasConflict = faultTicketRepository.existsByTechnicianIdAndReportDateAndStatusNot(
           faultTicket.getTechnician().getId(),
           faultTicket.getReportDate(),
@@ -46,6 +48,7 @@ public class FaultTicketService {
       return TECHNICIAN_BUSY_MESSAGE;
     }
     faultTicket.setStatus(TicketStatus.OPEN);
+
     faultTicketRepository.save(faultTicket);
     return SAVED;
   }
