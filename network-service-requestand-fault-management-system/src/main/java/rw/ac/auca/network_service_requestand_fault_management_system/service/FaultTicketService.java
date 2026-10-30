@@ -23,6 +23,10 @@ public class FaultTicketService {
   public static final String PAST_DATE_MESSAGE = "Fault ticket date cannot be in the past";
   public static final String TECHNICIAN_BUSY_MESSAGE = "Technician already has a ticket assigned on that date";
 
+  // D2
+  public static final String STATUS_UPDATED = "Fault ticket status updated successfully";
+  public static final String STATUS_ERROR_PREFIX = "Cannot change status";
+
   private final FaultTicketRepository faultTicketRepository;
 
   public FaultTicketService(FaultTicketRepository faultTicketRepository) {
@@ -62,9 +66,14 @@ public class FaultTicketService {
   }
 
   public String update(UUID id, FaultTicket faultTicket) {
-    if (!faultTicketRepository.existsById(id)) {
+    Optional<FaultTicket> optionalTicket = faultTicketRepository.findById(id);
+    if (optionalTicket.isEmpty()) {
       return NOT_FOUND;
     }
+
+    FaultTicket storedTicket = optionalTicket.get();
+    faultTicket.setStatus(storedTicket.getStatus());
+
     faultTicket.setId(id);
     faultTicketRepository.save(faultTicket);
     return UPDATED;
@@ -86,6 +95,38 @@ public class FaultTicketService {
   // B3
   public List<FaultTicket> findTicketsBetween(LocalDate start, LocalDate end) {
     return faultTicketRepository.findByReportDateBetweenOrderByReportDateAsc(start, end);
+  }
+
+  // D2
+  public String updateStatus(UUID id, TicketStatus newStatus) {
+    Optional<FaultTicket> optionalTicket = faultTicketRepository.findById(id);
+
+    if (optionalTicket.isEmpty()) {
+      return NOT_FOUND;
+    }
+
+    FaultTicket ticket = optionalTicket.get();
+    TicketStatus currentStatus = ticket.getStatus();
+    boolean valid = false;
+
+    if (currentStatus == TicketStatus.OPEN) {
+      if (newStatus == TicketStatus.INVESTIGATING || newStatus == TicketStatus.CANCELLED) {
+        valid = true;
+      }
+    } else if (currentStatus == TicketStatus.INVESTIGATING) {
+      if (newStatus == TicketStatus.RESOLVED || newStatus == TicketStatus.CANCELLED) {
+        valid = true;
+      }
+    } else if (currentStatus == TicketStatus.RESOLVED || currentStatus == TicketStatus.CANCELLED) {
+      valid = false;
+    }
+    if (!valid) {
+      return STATUS_ERROR_PREFIX + " from " + currentStatus + " to " + newStatus;
+    }
+    ticket.setStatus(newStatus);
+    faultTicketRepository.save(ticket);
+    return STATUS_UPDATED;
+
   }
 
 }

@@ -90,4 +90,18 @@ public class FaultTicketController {
     return ResponseEntity.ok(tickets);
   }
 
+  // D2
+  @PatchMapping("/{id}/status")
+  public ResponseEntity<?> changeStatus(@PathVariable UUID id, @RequestParam TicketStatus status) {
+    String message = faultTicketService.updateStatus(id, status);
+
+    if (message.equals(FaultTicketService.NOT_FOUND)) {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+    } else if (message.startsWith(FaultTicketService.STATUS_ERROR_PREFIX)) {
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
+    } else {
+      return ResponseEntity.status(HttpStatus.OK).body(message);
+    }
+  }
+
 }
