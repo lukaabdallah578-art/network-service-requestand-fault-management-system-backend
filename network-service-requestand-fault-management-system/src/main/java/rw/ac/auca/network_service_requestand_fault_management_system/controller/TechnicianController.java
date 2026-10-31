@@ -98,4 +98,27 @@ public class TechnicianController {
       return ResponseEntity.status(HttpStatus.OK).body(message);
     }
   }
+
+  // D4
+  @PatchMapping("/{technicianId}/location")
+  public ResponseEntity<?> moveTechnicianLocation(
+      @PathVariable UUID technicianId,
+      @RequestParam int locationNumber) {
+
+    String message = technicianService.moveTechnicianLocation(technicianId, locationNumber);
+
+    if (message.equals(TechnicianService.NOT_FOUND)) {
+
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+    } else if (message.equals(TechnicianService.LOCATION_NOT_FOUND)) {
+
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+    } else if (message.equals(TechnicianService.LOCATION_TAKEN)) {
+
+      return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
+    } else {
+      return ResponseEntity.status(HttpStatus.OK).body(message);
+    }
+  }
+
 }

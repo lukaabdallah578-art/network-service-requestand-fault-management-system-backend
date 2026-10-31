@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.Expertise;
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.Technician;
 import rw.ac.auca.network_service_requestand_fault_management_system.repository.ExpertiseRepository;
+import rw.ac.auca.network_service_requestand_fault_management_system.repository.LocationRepository;
 import rw.ac.auca.network_service_requestand_fault_management_system.repository.TechnicianRepository;
 import org.springframework.transaction.annotation.Transactional;
+import rw.ac.auca.network_service_requestand_fault_management_system.domain.Location;
 
 @Service
 public class TechnicianService {
@@ -25,13 +27,22 @@ public class TechnicianService {
   public static final String ALREADY_HAS_EXPERTISE = "The technician already has that expertise";
   public static final String EXPERTISE_ADDED = "Expertise added to the technician";
 
+  // D4
+  public static final String LOCATION_NOT_FOUND = "The location with that locationNumber does not exist";
+  public static final String LOCATION_TAKEN = "That location is taken by another technician";
+  public static final String LOCATION_CHANGED = "Location changed successfully";
+
   private final TechnicianRepository technicianRepository;
   // D3
   private final ExpertiseRepository expertiseRepository;
+  // D4
+  private final LocationRepository locationRepository;
 
-  public TechnicianService(TechnicianRepository technicianRepository, ExpertiseRepository expertiseRepository) {
+  public TechnicianService(TechnicianRepository technicianRepository, ExpertiseRepository expertiseRepository,
+      LocationRepository locationRepository) {
     this.technicianRepository = technicianRepository;
     this.expertiseRepository = expertiseRepository;
+    this.locationRepository = locationRepository;
   }
 
   public String save(Technician technician) {
@@ -97,6 +108,30 @@ public class TechnicianService {
     technician.getExpertises().add(expertise);
     technicianRepository.save(technician);
     return EXPERTISE_ADDED;
+  }
+
+  // D4
+  public String moveTechnicianLocation(UUID technicianId, int locationNumber) {
+    Optional<Technician> technicianOptional = technicianRepository.findById(technicianId);
+    if (technicianOptional.isEmpty()) {
+      return NOT_FOUND;
+    }
+
+    Optional<Location> locationOptional = locationRepository.findByLocationNumber(locationNumber);
+    if (locationOptional.isEmpty()) {
+      return LOCATION_NOT_FOUND;
+    }
+
+    Location newLocation = locationOptional.get();
+
+    if (technicianRepository.existsByLocation(newLocation)) {
+      return LOCATION_TAKEN;
+    }
+
+    Technician technician = technicianOptional.get();
+    technician.setLocation(newLocation);
+    technicianRepository.save(technician);
+    return LOCATION_CHANGED;
   }
 
 }
