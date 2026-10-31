@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.Technician;
 import rw.ac.auca.network_service_requestand_fault_management_system.service.TechnicianService;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api/technicians")
@@ -72,5 +71,31 @@ public class TechnicianController {
   public ResponseEntity<List<Technician>> findTechniciansByExpertise(@RequestParam String name) {
     List<Technician> technicians = technicianService.findTechniciansByExpertise(name);
     return ResponseEntity.ok(technicians);
+  }
+
+  // D3
+  @PutMapping("/{technicianId}/expertises/{expertiseId}")
+  public ResponseEntity<?> addExpertiseToTechnician(@PathVariable UUID technicianId, @PathVariable UUID expertiseId) {
+    String message = technicianService.addExpertiseToTechnician(technicianId, expertiseId);
+
+    if (message.equals(TechnicianService.NOT_FOUND)) {
+
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+    }
+
+    else if (message.equals(TechnicianService.EXPERTISE_NOT_FOUND)) {
+
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+    }
+
+    else if (message.equals(TechnicianService.ALREADY_HAS_EXPERTISE)) {
+
+      return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
+    }
+
+    else {
+
+      return ResponseEntity.status(HttpStatus.OK).body(message);
+    }
   }
 }
