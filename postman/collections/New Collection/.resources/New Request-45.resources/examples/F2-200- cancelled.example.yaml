@@ -1,0 +1,21 @@
+$kind: http-example
+name: "F2-200: cancelled"
+request:
+  url: http://localhost:8081/api/fault-tickets/cancel-day?technicianId=b85fc690-186e-43a4-b786-f4f620450c45&date=2026-10-20
+  method: PATCH
+  queryParams:
+    technicianId: b85fc690-186e-43a4-b786-f4f620450c45
+    date: 2026-10-20
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "25"
+    Date: Sun, 01 Nov 2026 14:45:35 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: 5 fault tickets cancelled
+order: 1000

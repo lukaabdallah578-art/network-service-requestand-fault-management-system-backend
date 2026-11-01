@@ -1,0 +1,17 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/resolutions/delete/05c94a06-b860-401a-a615-ddbdbabd8c0b
+  method: DELETE
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "31"
+    Date: Sun, 01 Nov 2026 14:53:41 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Resolution deleted successfully
+order: 1000

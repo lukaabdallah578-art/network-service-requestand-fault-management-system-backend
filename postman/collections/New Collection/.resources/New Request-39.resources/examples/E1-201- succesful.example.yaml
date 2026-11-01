@@ -1,0 +1,33 @@
+$kind: http-example
+name: "E1-201: succesful"
+request:
+  url: http://localhost:8081/api/resolutions/save?faultTicketId=a4b928e9-de73-4f4f-91bb-a996b7d6ee1c
+  method: POST
+  queryParams:
+    faultTicketId: a4b928e9-de73-4f4f-91bb-a996b7d6ee1c
+  body:
+    type: json
+    content: "{\r
+
+      \  \"fixType\": \"Cable replacement\",\r
+
+      \  \"description\": \"Replaced faulty patch cable in lab 3\",\r
+
+      \  \"minutesSpent\": 40,\r
+
+      \  \"resolvedDate\": \"2026-11-01\"\r
+
+      }"
+response:
+  statusCode: 201
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "29"
+    Date: Sun, 01 Nov 2026 14:27:03 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Resolution saved successfully
+order: 1000

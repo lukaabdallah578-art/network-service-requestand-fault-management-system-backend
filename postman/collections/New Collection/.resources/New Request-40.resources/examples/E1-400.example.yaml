@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/resolutions/save?faultTicketId=51aa3f40-546c-4d67-a87d-3a6f9c77bd3d
+  method: POST
+  queryParams:
+    faultTicketId: 51aa3f40-546c-4d67-a87d-3a6f9c77bd3d
+  body:
+    type: json
+    content: "{\r
+
+      \  \"fixType\": \"Cable replacement\",\r
+
+      \  \"description\": \"Replaced faulty patch cable in lab 3\",\r
+
+      \  \"minutesSpent\": 40,\r
+
+      \  \"resolvedDate\": \"2026-11-01\"\r
+
+      }"
+response:
+  statusCode: 400
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "47"
+    Date: Sun, 01 Nov 2026 14:32:18 GMT
+    Connection: close
+  body:
+    type: text
+    content: Resolutions are only for RESOLVED fault tickets
+order: 1000

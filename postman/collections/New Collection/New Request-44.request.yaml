@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/resolutions/delete/00000000-0000-0000-0000-000000000000
+method: DELETE
+examples: .resources/New Request-44.resources/examples
+order: 52000

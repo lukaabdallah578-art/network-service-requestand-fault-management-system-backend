@@ -1,0 +1,9 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/fault-tickets/cancel-day?technicianId=b85fc690-186e-43a4-b786-f4f620450c45&date=2026-10-20
+method: PATCH
+queryParams:
+  technicianId: b85fc690-186e-43a4-b786-f4f620450c45
+  date: 2026-10-20
+examples: .resources/New Request-45.resources/examples
+order: 53000

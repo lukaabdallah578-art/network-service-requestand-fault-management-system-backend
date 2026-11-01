@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/fault-tickets/delete/a4b928e9-de73-4f4f-91bb-a996b7d6ee1c
+method: DELETE
+examples: .resources/New Request-43.resources/examples
+order: 51000

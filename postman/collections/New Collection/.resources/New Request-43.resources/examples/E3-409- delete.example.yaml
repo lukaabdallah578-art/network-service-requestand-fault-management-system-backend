@@ -1,0 +1,18 @@
+$kind: http-example
+name: "E3-409: delete"
+request:
+  url: http://localhost:8081/api/fault-tickets/delete/a4b928e9-de73-4f4f-91bb-a996b7d6ee1c
+  method: DELETE
+response:
+  statusCode: 409
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "52"
+    Date: Sun, 01 Nov 2026 14:40:32 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: That fault ticket has resolutions, delete them first
+order: 1000

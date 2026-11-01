@@ -1,0 +1,17 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/resolutions/requester/ST-1025
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 14:37:18 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: "[]"
+order: 1000

@@ -6,10 +6,12 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.FaultTicket;
 import rw.ac.auca.network_service_requestand_fault_management_system.domain.TicketStatus;
 import rw.ac.auca.network_service_requestand_fault_management_system.repository.FaultTicketRepository;
+
+import rw.ac.auca.network_service_requestand_fault_management_system.repository.ResolutionRepository;
 
 @Service
 public class FaultTicketService {
@@ -27,10 +29,14 @@ public class FaultTicketService {
   public static final String STATUS_UPDATED = "Fault ticket status updated successfully";
   public static final String STATUS_ERROR_PREFIX = "Cannot change status";
 
-  private final FaultTicketRepository faultTicketRepository;
+  public static final String HAS_RESOLUTIONS = "That fault ticket has resolutions, delete them first";
 
-  public FaultTicketService(FaultTicketRepository faultTicketRepository) {
+  private final FaultTicketRepository faultTicketRepository;
+  private final ResolutionRepository resolutionRepository;
+
+  public FaultTicketService(FaultTicketRepository faultTicketRepository, ResolutionRepository resolutionRepository) {
     this.faultTicketRepository = faultTicketRepository;
+    this.resolutionRepository = resolutionRepository;
   }
 
   // A2
@@ -85,8 +91,13 @@ public class FaultTicketService {
   }
 
   public String delete(UUID id) {
-    if (!faultTicketRepository.existsById(id)) {
+    Optional<FaultTicket> optionalTicket = faultTicketRepository.findById(id);
+    if (optionalTicket.isEmpty()) {
       return NOT_FOUND;
+    }
+    FaultTicket ticket = optionalTicket.get();
+    if (resolutionRepository.existsByFaultTicket(ticket)) {
+      return HAS_RESOLUTIONS;
     }
     faultTicketRepository.deleteById(id);
     return DELETED;
@@ -134,4 +145,16 @@ public class FaultTicketService {
 
   }
 
+  // F1
+  public List<Object[]> countTicketsByStatus() {
+    return faultTicketRepository.countTicketsByStatus();
+  }
+
+  // F2
+  @Transactional
+  public String cancelDay(UUID technicianId, LocalDate date) {
+    int count = faultTicketRepository.cancelDay(technicianId, date,
+        TicketStatus.CANCELLED, TicketStatus.RESOLVED);
+    return count + " fault tickets cancelled";
+  }
 }

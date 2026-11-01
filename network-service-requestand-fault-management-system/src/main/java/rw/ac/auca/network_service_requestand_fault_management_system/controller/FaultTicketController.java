@@ -69,6 +69,8 @@ public class FaultTicketController {
 
     if (message.equals(FaultTicketService.NOT_FOUND)) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+    } else if (message.equals(FaultTicketService.HAS_RESOLUTIONS)) {
+      return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
     } else {
       return ResponseEntity.status(HttpStatus.OK).body(message);
     }
@@ -102,6 +104,19 @@ public class FaultTicketController {
     } else {
       return ResponseEntity.status(HttpStatus.OK).body(message);
     }
+  }
+
+  // F1
+  @GetMapping("/stats/by-status")
+  public ResponseEntity<List<Object[]>> statsByStatus() {
+    return ResponseEntity.ok(faultTicketService.countTicketsByStatus());
+  }
+
+  // F2
+  @PatchMapping("/cancel-day")
+  public ResponseEntity<String> cancelDay(@RequestParam UUID technicianId, @RequestParam String date) {
+    LocalDate day = LocalDate.parse(date);
+    return ResponseEntity.ok(faultTicketService.cancelDay(technicianId, day));
   }
 
 }

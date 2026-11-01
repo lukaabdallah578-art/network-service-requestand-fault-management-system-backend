@@ -1,0 +1,62 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/resolutions/requester/ST-1021
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 14:34:40 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "description": "Replaced faulty patch cable in lab 3",
+          "faultTicket": {
+            "description": "Core switch down in lab 3",
+            "id": "a4b928e9-de73-4f4f-91bb-a996b7d6ee1c",
+            "priority": "HIGH",
+            "reportDate": "2026-10-05",
+            "requester": {
+              "department": "IT",
+              "email": "alice@auca.ac.rw",
+              "firstName": "Alice",
+              "id": "35314d4c-0795-4e83-aa2b-3ca16f9d076e",
+              "lastName": "Abdallah",
+              "staffNumber": "ST-1021"
+            },
+            "status": "RESOLVED",
+            "technician": {
+              "email": "eric@auca.ac.rw",
+              "expertises": [
+                {
+                  "id": "dd91d8f2-d90f-4ee8-b27d-835c5fc1103e",
+                  "name": "Routing"
+                },
+                {
+                  "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+                  "name": "Wireless"
+                }
+              ],
+              "firstName": "Eric",
+              "id": "b85fc690-186e-43a4-b786-f4f620450c45",
+              "lastName": "Mugisha",
+              "location": {
+                "id": "85c5f619-4568-4c2f-a5a1-ced18a573435",
+                "locationNumber": 1,
+                "name": "Office 1"
+              }
+            }
+          },
+          "fixType": "Cable replacement",
+          "id": "05c94a06-b860-401a-a615-ddbdbabd8c0b",
+          "minutesSpent": 40,
+          "resolvedDate": "2026-11-01"
+        }
+      ]
+order: 1000

@@ -1,0 +1,5 @@
+$kind: http-request
+url: http://localhost:8081/api/fault-tickets/stats/by-status
+method: GET
+examples: .resources/F2.resources/examples
+order: 46000

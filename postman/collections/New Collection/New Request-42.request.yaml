@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/resolutions/requester/ST-1025
+method: GET
+examples: .resources/New Request-42.resources/examples
+order: 50000

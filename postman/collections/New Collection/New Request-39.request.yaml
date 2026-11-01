@@ -1,5 +1,21 @@
 $kind: http-request
 name: New Request
-url: ""
-method: GET
-order: 46000
+url: http://localhost:8081/api/resolutions/save?faultTicketId=a4b928e9-de73-4f4f-91bb-a996b7d6ee1c
+method: POST
+queryParams:
+  faultTicketId: a4b928e9-de73-4f4f-91bb-a996b7d6ee1c
+body:
+  type: json
+  content: "{\r
+
+    \  \"fixType\": \"Cable replacement\",\r
+
+    \  \"description\": \"Replaced faulty patch cable in lab 3\",\r
+
+    \  \"minutesSpent\": 40,\r
+
+    \  \"resolvedDate\": \"2026-11-01\"\r
+
+    }"
+examples: .resources/New Request-39.resources/examples
+order: 47000
