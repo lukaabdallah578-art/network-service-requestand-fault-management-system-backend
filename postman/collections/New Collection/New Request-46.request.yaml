@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/dashboard/summary
+method: GET
+examples: .resources/New Request-46.resources/examples
+order: 54000

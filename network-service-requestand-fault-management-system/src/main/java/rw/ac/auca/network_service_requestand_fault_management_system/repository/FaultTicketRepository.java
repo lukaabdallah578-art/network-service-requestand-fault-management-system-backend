@@ -32,4 +32,9 @@ public interface FaultTicketRepository extends JpaRepository<FaultTicket, UUID> 
   int cancelDay(@Param("technicianId") UUID technicianId, @Param("date") LocalDate date,
       @Param("cancelled") TicketStatus cancelled, @Param("resolved") TicketStatus resolved);
 
+  // Bonus
+  long countByReportDate(LocalDate reportDate);
+
+  long countByStatus(TicketStatus status);
+
 }

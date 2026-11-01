@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/dashboard/summary
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 15:17:58 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+        "requesters": 5,
+        "technicians": 3,
+        "freeLocations": 4,
+        "ticketsToday": 0,
+        "open": 7,
+        "resolutions": 0
+      }
+order: 1000
