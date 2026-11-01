@@ -1,0 +1,17 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/locations/delete/00000000-0000-0000-0000-000000000000
+  method: DELETE
+response:
+  statusCode: 404
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "40"
+    Date: Sun, 01 Nov 2026 08:43:51 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: The location with that id does not exist
+order: 1000

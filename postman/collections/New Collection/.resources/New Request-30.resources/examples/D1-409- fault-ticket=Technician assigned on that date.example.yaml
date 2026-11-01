@@ -1,0 +1,21 @@
+$kind: http-example
+name: "D1-409: fault-ticket=Technician assigned on that date"
+request:
+  url: http://localhost:8081/api/fault-tickets/save
+  method: POST
+  body:
+    type: json
+    content: '{"reportDate":"2027-02-01","status":"OPEN","description":"D1 conflict test","priority":"LOW","requester":{"id":"35314d4c-0795-4e83-aa2b-3ca16f9d076e"},"technician":{"id":"7504cb35-3669-42b1-b721-32ad2dccbbd5"}}'
+response:
+  statusCode: 409
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "53"
+    Date: Sun, 01 Nov 2026 09:51:49 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Technician already has a ticket assigned on that date
+order: 1000

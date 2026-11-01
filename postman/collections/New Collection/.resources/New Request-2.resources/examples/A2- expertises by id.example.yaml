@@ -1,0 +1,21 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/expertises/dd91d8f2-d90f-4ee8-b27d-835c5fc1103e
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 08:05:32 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+        "id": "dd91d8f2-d90f-4ee8-b27d-835c5fc1103e",
+        "name": "Routing"
+      }
+order: 1000

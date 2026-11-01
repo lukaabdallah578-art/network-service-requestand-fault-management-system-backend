@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/expertises/unused
+method: GET
+examples: .resources/New Request-26.resources/examples
+order: 32000

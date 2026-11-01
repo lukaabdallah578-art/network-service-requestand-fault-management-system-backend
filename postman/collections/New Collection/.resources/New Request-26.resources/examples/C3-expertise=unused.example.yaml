@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/expertises/unused
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 09:20:16 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "id": "e44b6fb6-9eb3-4c90-a779-32c6bfb77a6f",
+          "name": "Network Security"
+        }
+      ]
+order: 1000

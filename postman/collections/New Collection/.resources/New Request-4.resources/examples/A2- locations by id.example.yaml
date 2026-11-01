@@ -1,0 +1,22 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/locations/48322961-80b9-4538-b79f-286556996983
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 08:16:21 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+        "id": "48322961-80b9-4538-b79f-286556996983",
+        "locationNumber": 2,
+        "name": "Office 2"
+      }
+order: 1000

@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/expertises/all
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 08:02:37 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "id": "dd91d8f2-d90f-4ee8-b27d-835c5fc1103e",
+          "name": "Routing"
+        },
+        {
+          "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+          "name": "Wireless"
+        },
+        {
+          "id": "eb1bd17f-c721-423e-8103-f552ad541540",
+          "name": "Cabling"
+        },
+        {
+          "id": "e44b6fb6-9eb3-4c90-a779-32c6bfb77a6f",
+          "name": "Network Security"
+        }
+      ]
+order: 1000

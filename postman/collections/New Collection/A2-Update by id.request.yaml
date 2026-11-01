@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/locations/update/1bcdde8a-fee1-4d6a-8206-8290e2740855
+method: PUT
+body:
+  type: json
+  content: '{"locationNumber":6}'
+examples: .resources/A2-Update by id.resources/examples
+order: 15000

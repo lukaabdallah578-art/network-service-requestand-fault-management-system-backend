@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/technicians/00000000-0000-0000-0000-000000000000/expertises/eb1bd17f-c721-423e-8103-f552ad541540
+method: PUT
+examples: .resources/New Request-35.resources/examples
+order: 41000

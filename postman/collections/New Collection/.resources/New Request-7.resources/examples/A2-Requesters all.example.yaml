@@ -1,0 +1,59 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/requesters/all
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 08:20:23 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "department": "IT",
+          "email": "alice@auca.ac.rw",
+          "firstName": "Alice",
+          "id": "35314d4c-0795-4e83-aa2b-3ca16f9d076e",
+          "lastName": "Abdallah",
+          "staffNumber": "ST-1021"
+        },
+        {
+          "department": "Finance",
+          "email": "brian@auca.ac.rw",
+          "firstName": "Brian",
+          "id": "8bee2606-1213-400b-83c6-caa8a81928f8",
+          "lastName": "Abdallah",
+          "staffNumber": "ST-1022"
+        },
+        {
+          "department": "Library",
+          "email": "chantal@auca.ac.rw",
+          "firstName": "Chantal",
+          "id": "056101dc-973d-4f3d-a156-41702b3dc597",
+          "lastName": "Uwase",
+          "staffNumber": "ST-1023"
+        },
+        {
+          "department": "Admissions",
+          "email": "david@auca.ac.rw",
+          "firstName": "David",
+          "id": "a4f08218-74b1-4b27-8ae2-22a703ed8884",
+          "lastName": "Habimana",
+          "staffNumber": "ST-1024"
+        },
+        {
+          "department": "Registry",
+          "email": "esther@auca.ac.rw",
+          "firstName": "Esther",
+          "id": "07f57ff2-079d-4b75-af97-c9c0dca57216",
+          "lastName": "Mukamana",
+          "staffNumber": "ST-1025"
+        }
+      ]
+order: 1000

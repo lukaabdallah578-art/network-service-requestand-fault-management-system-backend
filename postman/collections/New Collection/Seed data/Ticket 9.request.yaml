@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/fault-tickets/save
+method: POST
+body:
+  type: json
+  content: '{"reportDate":"2026-11-20","status":"OPEN","description":"Routing table misconfiguration","priority":"HIGH","requester":{"id":"056101dc-973d-4f3d-a156-41702b3dc597"},"technician":{"id":"b85fc690-186e-43a4-b786-f4f620450c45"}}'
+examples: .resources/Ticket 9.resources/examples
+order: 25000

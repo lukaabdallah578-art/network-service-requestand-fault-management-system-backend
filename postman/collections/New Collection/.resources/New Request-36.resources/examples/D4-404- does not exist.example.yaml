@@ -1,0 +1,20 @@
+$kind: http-example
+name: "D4-404: does not exist"
+request:
+  url: http://localhost:8081/api/technicians/3104b357-a319-40cb-8ab9-6230dcbe9e97/location?locationNumber=1
+  method: PATCH
+  queryParams:
+    locationNumber: "1"
+response:
+  statusCode: 404
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "42"
+    Date: Sun, 01 Nov 2026 11:10:32 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: The technician with that id does not exist
+order: 1000

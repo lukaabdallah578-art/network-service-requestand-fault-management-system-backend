@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/expertises/save
+method: POST
+body:
+  type: json
+  content: '{"name":"Network Security"}'
+examples: .resources/Network security expertise.resources/examples
+order: 4000

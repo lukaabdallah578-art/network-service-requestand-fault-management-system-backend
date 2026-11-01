@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/locations/all
+method: GET
+examples: .resources/New Request-3.resources/examples
+order: 8000

@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/technicians/save
+method: POST
+body:
+  type: json
+  content: '{"firstName":"Jean","lastName":"Niyonzima","email":"jean@auca.ac.rw","location":{"id":"57c5802e-2976-4a48-83f1-4964ead8cfe4"},"expertises":[{"id":"7860df7b-173d-4864-8591-ae9da3bcfade"}]}'
+examples: .resources/Technician Jean.resources/examples
+order: 16000

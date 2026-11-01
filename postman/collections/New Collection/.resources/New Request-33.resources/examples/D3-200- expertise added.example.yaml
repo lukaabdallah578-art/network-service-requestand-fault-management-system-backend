@@ -1,0 +1,18 @@
+$kind: http-example
+name: "D3-200: expertise added"
+request:
+  url: http://localhost:8081/api/technicians/7504cb35-3669-42b1-b721-32ad2dccbbd5/expertises/eb1bd17f-c721-423e-8103-f552ad541540
+  method: PUT
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "33"
+    Date: Sun, 01 Nov 2026 10:42:18 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Expertise added to the technician
+order: 1000

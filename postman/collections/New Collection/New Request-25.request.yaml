@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/locations/free
+method: GET
+examples: .resources/New Request-25.resources/examples
+order: 31000

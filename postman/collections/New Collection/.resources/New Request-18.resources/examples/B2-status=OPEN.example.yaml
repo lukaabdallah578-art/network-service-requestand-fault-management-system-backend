@@ -1,0 +1,217 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/fault-tickets/by-status?status=OPEN
+  method: GET
+  queryParams:
+    status: OPEN
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 09:00:21 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "description": "Access point offline",
+          "id": "51aa3f40-546c-4d67-a87d-3a6f9c77bd3d",
+          "priority": "MEDIUM",
+          "reportDate": "2026-11-03",
+          "requester": {
+            "department": "IT",
+            "email": "alice@auca.ac.rw",
+            "firstName": "Alice",
+            "id": "35314d4c-0795-4e83-aa2b-3ca16f9d076e",
+            "lastName": "Abdallah",
+            "staffNumber": "ST-1021"
+          },
+          "status": "OPEN",
+          "technician": {
+            "email": "jean@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+                "name": "Wireless"
+              }
+            ],
+            "firstName": "Jean",
+            "id": "7504cb35-3669-42b1-b721-32ad2dccbbd5",
+            "lastName": "Niyonzima",
+            "location": {
+              "id": "57c5802e-2976-4a48-83f1-4964ead8cfe4",
+              "locationNumber": 3,
+              "name": "Office 3"
+            }
+          }
+        },
+        {
+          "description": "Slow network in registry",
+          "id": "44fff002-d19f-48fa-a2df-ec8d18a0fdbe",
+          "priority": "MEDIUM",
+          "reportDate": "2026-11-10",
+          "requester": {
+            "department": "Registry",
+            "email": "esther@auca.ac.rw",
+            "firstName": "Esther",
+            "id": "07f57ff2-079d-4b75-af97-c9c0dca57216",
+            "lastName": "Mukamana",
+            "staffNumber": "ST-1025"
+          },
+          "status": "OPEN",
+          "technician": {
+            "email": "grace@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "eb1bd17f-c721-423e-8103-f552ad541540",
+                "name": "Cabling"
+              }
+            ],
+            "firstName": "Grace",
+            "id": "b87dd3be-735a-4710-ae28-4e671392ba03",
+            "lastName": "Uwimana",
+            "location": {
+              "id": "48322961-80b9-4538-b79f-286556996983",
+              "locationNumber": 2,
+              "name": "Office 2"
+            }
+          }
+        },
+        {
+          "description": "Slow network in registry",
+          "id": "8d145105-c412-45ee-9e5c-e064513d9952",
+          "priority": "MEDIUM",
+          "reportDate": "2026-11-10",
+          "requester": {
+            "department": "Registry",
+            "email": "esther@auca.ac.rw",
+            "firstName": "Esther",
+            "id": "07f57ff2-079d-4b75-af97-c9c0dca57216",
+            "lastName": "Mukamana",
+            "staffNumber": "ST-1025"
+          },
+          "status": "OPEN",
+          "technician": {
+            "email": "grace@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "eb1bd17f-c721-423e-8103-f552ad541540",
+                "name": "Cabling"
+              }
+            ],
+            "firstName": "Grace",
+            "id": "b87dd3be-735a-4710-ae28-4e671392ba03",
+            "lastName": "Uwimana",
+            "location": {
+              "id": "48322961-80b9-4538-b79f-286556996983",
+              "locationNumber": 2,
+              "name": "Office 2"
+            }
+          }
+        },
+        {
+          "description": "Slow network in registry",
+          "id": "1ebcf89e-32cb-4586-a5b8-d674d7bea216",
+          "priority": "MEDIUM",
+          "reportDate": "2026-11-10",
+          "requester": {
+            "department": "Registry",
+            "email": "esther@auca.ac.rw",
+            "firstName": "Esther",
+            "id": "07f57ff2-079d-4b75-af97-c9c0dca57216",
+            "lastName": "Mukamana",
+            "staffNumber": "ST-1025"
+          },
+          "status": "OPEN",
+          "technician": {
+            "email": "grace@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "eb1bd17f-c721-423e-8103-f552ad541540",
+                "name": "Cabling"
+              }
+            ],
+            "firstName": "Grace",
+            "id": "b87dd3be-735a-4710-ae28-4e671392ba03",
+            "lastName": "Uwimana",
+            "location": {
+              "id": "48322961-80b9-4538-b79f-286556996983",
+              "locationNumber": 2,
+              "name": "Office 2"
+            }
+          }
+        },
+        {
+          "description": "Routing table misconfiguration",
+          "id": "c4e75862-4e06-45ef-9a20-1f9dfe77ecdc",
+          "priority": "HIGH",
+          "reportDate": "2026-11-20",
+          "requester": {
+            "department": "Library",
+            "email": "chantal@auca.ac.rw",
+            "firstName": "Chantal",
+            "id": "056101dc-973d-4f3d-a156-41702b3dc597",
+            "lastName": "Uwase",
+            "staffNumber": "ST-1023"
+          },
+          "status": "OPEN",
+          "technician": {
+            "email": "eric@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "dd91d8f2-d90f-4ee8-b27d-835c5fc1103e",
+                "name": "Routing"
+              },
+              {
+                "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+                "name": "Wireless"
+              }
+            ],
+            "firstName": "Eric",
+            "id": "b85fc690-186e-43a4-b786-f4f620450c45",
+            "lastName": "Mugisha",
+            "location": {
+              "id": "3104b357-a319-40cb-8ab9-6230dcbe9e97",
+              "locationNumber": 1,
+              "name": "Office 1"
+            }
+          }
+        },
+        {
+          "description": "Wireless coverage gap",
+          "id": "72710f08-1fc3-4581-a3a3-17039010449f",
+          "priority": "LOW",
+          "reportDate": "2026-11-28",
+          "requester": {
+            "department": "Admissions",
+            "email": "david@auca.ac.rw",
+            "firstName": "David",
+            "id": "a4f08218-74b1-4b27-8ae2-22a703ed8884",
+            "lastName": "Habimana",
+            "staffNumber": "ST-1024"
+          },
+          "status": "OPEN",
+          "technician": {
+            "email": "jean@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+                "name": "Wireless"
+              }
+            ],
+            "firstName": "Jean",
+            "id": "7504cb35-3669-42b1-b721-32ad2dccbbd5",
+            "lastName": "Niyonzima",
+            "location": {
+              "id": "57c5802e-2976-4a48-83f1-4964ead8cfe4",
+              "locationNumber": 3,
+              "name": "Office 3"
+            }
+          }
+        }
+      ]
+order: 1000

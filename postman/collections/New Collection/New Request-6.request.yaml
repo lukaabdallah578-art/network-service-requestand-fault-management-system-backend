@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/technicians/b87dd3be-735a-4710-ae28-4e671392ba03
+method: GET
+examples: .resources/New Request-6.resources/examples
+order: 11000

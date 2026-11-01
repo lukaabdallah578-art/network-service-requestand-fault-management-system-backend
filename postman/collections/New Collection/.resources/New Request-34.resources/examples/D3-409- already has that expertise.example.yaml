@@ -1,0 +1,18 @@
+$kind: http-example
+name: "D3-409: already has that expertise"
+request:
+  url: http://localhost:8081/api/technicians/7504cb35-3669-42b1-b721-32ad2dccbbd5/expertises/eb1bd17f-c721-423e-8103-f552ad541540
+  method: PUT
+response:
+  statusCode: 409
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "41"
+    Date: Sun, 01 Nov 2026 10:44:03 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: The technician already has that expertise
+order: 1000

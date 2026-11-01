@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/expertises/dd91d8f2-d90f-4ee8-b27d-835c5fc1103e
+method: GET
+examples: .resources/New Request-2.resources/examples
+order: 7000

@@ -1,0 +1,17 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/locations/delete/1bcdde8a-fee1-4d6a-8206-8290e2740855
+  method: DELETE
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "29"
+    Date: Sun, 01 Nov 2026 08:34:11 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Location deleted successfully
+order: 1000

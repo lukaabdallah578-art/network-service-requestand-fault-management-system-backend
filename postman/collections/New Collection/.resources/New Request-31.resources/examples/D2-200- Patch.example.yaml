@@ -1,0 +1,20 @@
+$kind: http-example
+name: "D2-200: Patch"
+request:
+  url: http://localhost:8081/api/fault-tickets/8d145105-c412-45ee-9e5c-e064513d9952/status?status=INVESTIGATING
+  method: PATCH
+  queryParams:
+    status: INVESTIGATING
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "40"
+    Date: Sun, 01 Nov 2026 10:28:52 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Fault ticket status updated successfully
+order: 1000

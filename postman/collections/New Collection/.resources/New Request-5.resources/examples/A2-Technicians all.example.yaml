@@ -1,0 +1,74 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/technicians/all
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 08:17:45 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "email": "eric@auca.ac.rw",
+          "expertises": [
+            {
+              "id": "dd91d8f2-d90f-4ee8-b27d-835c5fc1103e",
+              "name": "Routing"
+            },
+            {
+              "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+              "name": "Wireless"
+            }
+          ],
+          "firstName": "Eric",
+          "id": "b85fc690-186e-43a4-b786-f4f620450c45",
+          "lastName": "Mugisha",
+          "location": {
+            "id": "3104b357-a319-40cb-8ab9-6230dcbe9e97",
+            "locationNumber": 1,
+            "name": "Office 1"
+          }
+        },
+        {
+          "email": "grace@auca.ac.rw",
+          "expertises": [
+            {
+              "id": "eb1bd17f-c721-423e-8103-f552ad541540",
+              "name": "Cabling"
+            }
+          ],
+          "firstName": "Grace",
+          "id": "b87dd3be-735a-4710-ae28-4e671392ba03",
+          "lastName": "Uwimana",
+          "location": {
+            "id": "48322961-80b9-4538-b79f-286556996983",
+            "locationNumber": 2,
+            "name": "Office 2"
+          }
+        },
+        {
+          "email": "jean@auca.ac.rw",
+          "expertises": [
+            {
+              "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+              "name": "Wireless"
+            }
+          ],
+          "firstName": "Jean",
+          "id": "7504cb35-3669-42b1-b721-32ad2dccbbd5",
+          "lastName": "Niyonzima",
+          "location": {
+            "id": "57c5802e-2976-4a48-83f1-4964ead8cfe4",
+            "locationNumber": 3,
+            "name": "Office 3"
+          }
+        }
+      ]
+order: 1000

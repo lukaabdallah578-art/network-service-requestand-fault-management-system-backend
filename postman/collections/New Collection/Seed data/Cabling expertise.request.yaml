@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/expertises/save
+method: POST
+body:
+  type: json
+  content: '{"name":"Cabling"}'
+examples: .resources/Cabling expertise.resources/examples
+order: 3000

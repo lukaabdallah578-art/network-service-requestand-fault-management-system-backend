@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/locations/delete/1bcdde8a-fee1-4d6a-8206-8290e2740855
+method: DELETE
+examples: .resources/New Request-10.resources/examples
+order: 16000

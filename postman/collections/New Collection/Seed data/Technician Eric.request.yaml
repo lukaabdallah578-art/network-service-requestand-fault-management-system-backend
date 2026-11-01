@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/technicians/save
+method: POST
+body:
+  type: json
+  content: '{"firstName":"Eric","lastName":"Mugisha","email":"eric@auca.ac.rw","location":{"id":"3104b357-a319-40cb-8ab9-6230dcbe9e97"},"expertises":[{"id":"dd91d8f2-d90f-4ee8-b27d-835c5fc1103e"},{"id":"7860df7b-173d-4864-8591-ae9da3bcfade"}]}'
+examples: .resources/Technician Eric.resources/examples
+order: 14000

@@ -1,0 +1,8 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/requesters/bylast-name?lastName=ABDALLAH
+method: GET
+queryParams:
+  lastName: ABDALLAH
+examples: .resources/New Request-15.resources/examples
+order: 21000

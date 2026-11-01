@@ -12,10 +12,10 @@ public class Location {
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
 
-  @Column(name = "location_number")
+  @Column(name = "location_number", nullable = false, unique = true)
   private int locationNumber;
 
-  @Column(name = "name")
+  @Column(name = "name", nullable = false)
   private String name;
 
   public UUID getId() {

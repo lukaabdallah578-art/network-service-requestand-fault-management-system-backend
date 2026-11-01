@@ -1,0 +1,20 @@
+$kind: http-example
+name: "D4-200: successful"
+request:
+  url: http://localhost:8081/api/technicians/b85fc690-186e-43a4-b786-f4f620450c45/location?locationNumber=1
+  method: PATCH
+  queryParams:
+    locationNumber: "1"
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "29"
+    Date: Sun, 01 Nov 2026 11:24:01 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Location changed successfully
+order: 1000

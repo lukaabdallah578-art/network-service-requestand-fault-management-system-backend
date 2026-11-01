@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/locations/save
+method: POST
+body:
+  type: json
+  content: '{"locationNumber":5,"name":"Office 5"}'
+examples: .resources/Temp Location.resources/examples
+order: 27000

@@ -1,0 +1,8 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/fault-tickets/by-status?status=RESOLVED
+method: GET
+queryParams:
+  status: RESOLVED
+examples: .resources/New Request-17.resources/examples
+order: 23000

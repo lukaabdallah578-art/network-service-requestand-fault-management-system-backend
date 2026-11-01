@@ -1,0 +1,8 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/fault-tickets/8d145105-c412-45ee-9e5c-e064513d9952/status?status=INVESTIGATING
+method: PATCH
+queryParams:
+  status: INVESTIGATING
+examples: .resources/New Request-31.resources/examples
+order: 37000

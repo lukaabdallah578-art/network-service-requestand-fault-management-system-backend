@@ -1,0 +1,5 @@
+$kind: http-request
+url: http://localhost:8081/api/fault-tickets/a4b928e9-de73-4f4f-91bb-a996b7d6ee1c
+method: GET
+examples: .resources/A2-fault-ticlets by id.resources/examples
+order: 4000

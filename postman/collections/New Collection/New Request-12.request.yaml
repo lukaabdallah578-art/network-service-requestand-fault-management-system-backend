@@ -1,0 +1,6 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/requesters/00000000-0000-0000-0000-000000000000
+method: GET
+examples: .resources/New Request-12.resources/examples
+order: 18000

@@ -1,0 +1,21 @@
+$kind: http-example
+name: Ticket 3
+request:
+  url: http://localhost:8081/api/fault-tickets/save
+  method: POST
+  body:
+    type: json
+    content: '{"reportDate":"2026-10-20","status":"INVESTIGATING","description":"Intermittent Wi-Fi in library","priority":"HIGH","requester":{"id":"8bee2606-1213-400b-83c6-caa8a81928f8"},"technician":{"id":"b85fc690-186e-43a4-b786-f4f620450c45"}}'
+response:
+  statusCode: 201
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "31"
+    Date: Sat, 31 Oct 2026 18:17:43 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Fault ticket saved successfully
+order: 2000

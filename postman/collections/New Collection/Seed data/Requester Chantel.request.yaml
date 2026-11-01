@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/requesters/save
+method: POST
+body:
+  type: json
+  content: '{"firstName":"Chantal","lastName":"Uwase","staffNumber":"ST-1023","email":"chantal@auca.ac.rw","department":"Library"}'
+examples: .resources/Requester Chantel.resources/examples
+order: 7000

@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/fault-tickets/save
+method: POST
+body:
+  type: json
+  content: '{"reportDate":"2026-11-10","status":"OPEN","description":"Slow network in registry","priority":"MEDIUM","requester":{"id":"07f57ff2-079d-4b75-af97-c9c0dca57216"},"technician":{"id":"b87dd3be-735a-4710-ae28-4e671392ba03"}}'
+examples: .resources/Ticket 7.resources/examples
+order: 23000

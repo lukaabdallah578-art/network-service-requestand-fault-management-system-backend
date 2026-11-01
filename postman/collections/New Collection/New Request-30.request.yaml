@@ -1,0 +1,9 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/fault-tickets/save
+method: POST
+body:
+  type: json
+  content: '{"reportDate":"2027-02-01","status":"OPEN","description":"D1 conflict test","priority":"LOW","requester":{"id":"35314d4c-0795-4e83-aa2b-3ca16f9d076e"},"technician":{"id":"7504cb35-3669-42b1-b721-32ad2dccbbd5"}}'
+examples: .resources/New Request-30.resources/examples
+order: 36000

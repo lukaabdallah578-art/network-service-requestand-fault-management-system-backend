@@ -1,0 +1,34 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/technicians/b87dd3be-735a-4710-ae28-4e671392ba03
+  method: GET
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 08:19:09 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+        "email": "grace@auca.ac.rw",
+        "expertises": [
+          {
+            "id": "eb1bd17f-c721-423e-8103-f552ad541540",
+            "name": "Cabling"
+          }
+        ],
+        "firstName": "Grace",
+        "id": "b87dd3be-735a-4710-ae28-4e671392ba03",
+        "lastName": "Uwimana",
+        "location": {
+          "id": "48322961-80b9-4538-b79f-286556996983",
+          "locationNumber": 2,
+          "name": "Office 2"
+        }
+      }
+order: 1000

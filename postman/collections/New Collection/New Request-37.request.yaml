@@ -1,0 +1,9 @@
+$kind: http-request
+name: New Request
+description: ""
+url: http://localhost:8081/api/technicians/b85fc690-186e-43a4-b786-f4f620450c45/location?locationNumber=4
+method: PATCH
+queryParams:
+  locationNumber: "4"
+examples: .resources/New Request-37.resources/examples
+order: 43000

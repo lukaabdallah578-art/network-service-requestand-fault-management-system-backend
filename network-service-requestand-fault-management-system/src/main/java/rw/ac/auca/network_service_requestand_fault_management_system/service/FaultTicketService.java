@@ -33,8 +33,13 @@ public class FaultTicketService {
     this.faultTicketRepository = faultTicketRepository;
   }
 
+  // A2
+  // public String save(FaultTicket faultTicket)
+
   // D1
   public String save(FaultTicket faultTicket) {
+
+    faultTicketRepository.save(faultTicket);
 
     if (faultTicket.getReportDate().isBefore(LocalDate.now())) {
       return PAST_DATE_MESSAGE;

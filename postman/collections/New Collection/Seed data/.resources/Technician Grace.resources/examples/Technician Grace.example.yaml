@@ -1,0 +1,20 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/technicians/save
+  method: POST
+  body:
+    type: json
+    content: '{"firstName":"Grace","lastName":"Uwimana","email":"grace@auca.ac.rw","location":{"id":"48322961-80b9-4538-b79f-286556996983"},"expertises":[{"id":"eb1bd17f-c721-423e-8103-f552ad541540"}]}'
+response:
+  statusCode: 201
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "29"
+    Date: Sat, 31 Oct 2026 17:41:12 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Technician saved successfully
+order: 1000

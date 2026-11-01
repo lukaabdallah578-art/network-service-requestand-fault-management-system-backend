@@ -1,0 +1,20 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/requesters/save
+  method: POST
+  body:
+    type: json
+    content: '{"firstName":"Brian","lastName":"Abdallah","staffNumber":"ST-1022","email":"brian@auca.ac.rw","department":"Finance"}'
+response:
+  statusCode: 201
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "28"
+    Date: Sat, 31 Oct 2026 17:03:17 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Requester saved successfully
+order: 1000

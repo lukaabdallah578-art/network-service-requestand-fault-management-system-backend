@@ -1,0 +1,20 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/expertises/save
+  method: POST
+  body:
+    type: json
+    content: '{"name":"Cabling"}'
+response:
+  statusCode: 201
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "28"
+    Date: Sat, 31 Oct 2026 16:48:18 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Expertise saved successfully
+order: 1000

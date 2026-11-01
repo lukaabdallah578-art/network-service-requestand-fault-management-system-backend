@@ -1,0 +1,9 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/fault-tickets/between?start=2027-06-01&end=2027-06-30
+method: GET
+queryParams:
+  start: 2027-06-01
+  end: 2027-06-30
+examples: .resources/New Request-22.resources/examples
+order: 28000

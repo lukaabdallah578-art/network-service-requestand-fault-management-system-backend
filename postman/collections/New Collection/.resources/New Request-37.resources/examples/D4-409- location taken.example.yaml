@@ -1,0 +1,20 @@
+$kind: http-example
+name: "D4-409: location taken"
+request:
+  url: http://localhost:8081/api/technicians/b85fc690-186e-43a4-b786-f4f620450c45/location?locationNumber=4
+  method: PATCH
+  queryParams:
+    locationNumber: "4"
+response:
+  statusCode: 409
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "44"
+    Date: Sun, 01 Nov 2026 11:04:19 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: That location is taken by another technician
+order: 1000

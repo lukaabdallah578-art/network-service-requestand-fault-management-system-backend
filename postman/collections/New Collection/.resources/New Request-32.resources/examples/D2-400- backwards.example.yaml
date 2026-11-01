@@ -1,0 +1,19 @@
+$kind: http-example
+name: "D2-400: backwards"
+request:
+  url: http://localhost:8081/api/fault-tickets/862cb7af-91e7-4347-8499-d9433347cabb/status?status=OPEN
+  method: PATCH
+  queryParams:
+    status: OPEN
+response:
+  statusCode: 400
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "47"
+    Date: Sun, 01 Nov 2026 10:34:56 GMT
+    Connection: close
+  body:
+    type: text
+    content: Cannot change status from INVESTIGATING to OPEN
+order: 1000

@@ -1,0 +1,18 @@
+$kind: http-example
+name: "D3-404: Technician does not exist"
+request:
+  url: http://localhost:8081/api/technicians/00000000-0000-0000-0000-000000000000/expertises/eb1bd17f-c721-423e-8103-f552ad541540
+  method: PUT
+response:
+  statusCode: 404
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "42"
+    Date: Sun, 01 Nov 2026 10:48:18 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: The technician with that id does not exist
+order: 1000

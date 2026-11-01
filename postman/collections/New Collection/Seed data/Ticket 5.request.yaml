@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/fault-tickets/save
+method: POST
+body:
+  type: json
+  content: '{"reportDate":"2026-10-25","status":"CANCELLED","description":"Cabling inspection","priority":"LOW","requester":{"id":"a4f08218-74b1-4b27-8ae2-22a703ed8884"},"technician":{"id":"b87dd3be-735a-4710-ae28-4e671392ba03"}}'
+examples: .resources/Ticket 5.resources/examples
+order: 21000

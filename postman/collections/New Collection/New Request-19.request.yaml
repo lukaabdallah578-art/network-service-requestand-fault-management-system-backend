@@ -1,0 +1,8 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/fault-tickets/by-status?status=NEVER
+method: GET
+queryParams:
+  status: NEVER
+examples: .resources/New Request-19.resources/examples
+order: 25000

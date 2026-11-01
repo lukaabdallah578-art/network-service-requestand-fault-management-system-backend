@@ -1,0 +1,8 @@
+$kind: http-request
+name: New Request
+url: http://localhost:8081/api/technicians/by-expertise?name=WIRELESS
+method: GET
+queryParams:
+  name: WIRELESS
+examples: .resources/New Request-24.resources/examples
+order: 30000

@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/fault-tickets/save
+method: POST
+body:
+  type: json
+  content: '{"reportDate":"2026-10-12","status":"RESOLVED","description":"Faulty patch cable in office 2","priority":"MEDIUM","requester":{"id":"35314d4c-0795-4e83-aa2b-3ca16f9d076e"},"technician":{"id":"b87dd3be-735a-4710-ae28-4e671392ba03"}}'
+examples: .resources/Ticket 2.resources/examples
+order: 18000

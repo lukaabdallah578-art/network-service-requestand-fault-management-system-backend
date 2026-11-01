@@ -1,0 +1,203 @@
+$kind: http-example
+name: "B3-fault-ticket: one day"
+request:
+  url: http://localhost:8081/api/fault-tickets/between?start=2026-10-20&end=2026-10-20
+  method: GET
+  queryParams:
+    start: 2026-10-20
+    end: 2026-10-20
+response:
+  statusCode: 200
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 09:08:24 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "description": "Intermittent Wi-Fi in library",
+          "id": "28658530-9ec6-4965-9d76-7751ff5ae490",
+          "priority": "HIGH",
+          "reportDate": "2026-10-20",
+          "requester": {
+            "department": "Finance",
+            "email": "brian@auca.ac.rw",
+            "firstName": "Brian",
+            "id": "8bee2606-1213-400b-83c6-caa8a81928f8",
+            "lastName": "Abdallah",
+            "staffNumber": "ST-1022"
+          },
+          "status": "INVESTIGATING",
+          "technician": {
+            "email": "eric@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "dd91d8f2-d90f-4ee8-b27d-835c5fc1103e",
+                "name": "Routing"
+              },
+              {
+                "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+                "name": "Wireless"
+              }
+            ],
+            "firstName": "Eric",
+            "id": "b85fc690-186e-43a4-b786-f4f620450c45",
+            "lastName": "Mugisha",
+            "location": {
+              "id": "3104b357-a319-40cb-8ab9-6230dcbe9e97",
+              "locationNumber": 1,
+              "name": "Office 1"
+            }
+          }
+        },
+        {
+          "description": "Intermittent Wi-Fi in library",
+          "id": "ffafb505-bcea-4b2e-b993-3dda570081fe",
+          "priority": "HIGH",
+          "reportDate": "2026-10-20",
+          "requester": {
+            "department": "Finance",
+            "email": "brian@auca.ac.rw",
+            "firstName": "Brian",
+            "id": "8bee2606-1213-400b-83c6-caa8a81928f8",
+            "lastName": "Abdallah",
+            "staffNumber": "ST-1022"
+          },
+          "status": "INVESTIGATING",
+          "technician": {
+            "email": "eric@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "dd91d8f2-d90f-4ee8-b27d-835c5fc1103e",
+                "name": "Routing"
+              },
+              {
+                "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+                "name": "Wireless"
+              }
+            ],
+            "firstName": "Eric",
+            "id": "b85fc690-186e-43a4-b786-f4f620450c45",
+            "lastName": "Mugisha",
+            "location": {
+              "id": "3104b357-a319-40cb-8ab9-6230dcbe9e97",
+              "locationNumber": 1,
+              "name": "Office 1"
+            }
+          }
+        },
+        {
+          "description": "Intermittent Wi-Fi in library",
+          "id": "862cb7af-91e7-4347-8499-d9433347cabb",
+          "priority": "HIGH",
+          "reportDate": "2026-10-20",
+          "requester": {
+            "department": "Finance",
+            "email": "brian@auca.ac.rw",
+            "firstName": "Brian",
+            "id": "8bee2606-1213-400b-83c6-caa8a81928f8",
+            "lastName": "Abdallah",
+            "staffNumber": "ST-1022"
+          },
+          "status": "INVESTIGATING",
+          "technician": {
+            "email": "eric@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "dd91d8f2-d90f-4ee8-b27d-835c5fc1103e",
+                "name": "Routing"
+              },
+              {
+                "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+                "name": "Wireless"
+              }
+            ],
+            "firstName": "Eric",
+            "id": "b85fc690-186e-43a4-b786-f4f620450c45",
+            "lastName": "Mugisha",
+            "location": {
+              "id": "3104b357-a319-40cb-8ab9-6230dcbe9e97",
+              "locationNumber": 1,
+              "name": "Office 1"
+            }
+          }
+        },
+        {
+          "description": "Intermittent Wi-Fi in library",
+          "id": "34abe1b9-14f0-4313-ab57-63b3bd65d94a",
+          "priority": "HIGH",
+          "reportDate": "2026-10-20",
+          "requester": {
+            "department": "Finance",
+            "email": "brian@auca.ac.rw",
+            "firstName": "Brian",
+            "id": "8bee2606-1213-400b-83c6-caa8a81928f8",
+            "lastName": "Abdallah",
+            "staffNumber": "ST-1022"
+          },
+          "status": "INVESTIGATING",
+          "technician": {
+            "email": "eric@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "dd91d8f2-d90f-4ee8-b27d-835c5fc1103e",
+                "name": "Routing"
+              },
+              {
+                "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+                "name": "Wireless"
+              }
+            ],
+            "firstName": "Eric",
+            "id": "b85fc690-186e-43a4-b786-f4f620450c45",
+            "lastName": "Mugisha",
+            "location": {
+              "id": "3104b357-a319-40cb-8ab9-6230dcbe9e97",
+              "locationNumber": 1,
+              "name": "Office 1"
+            }
+          }
+        },
+        {
+          "description": "Router reboot request",
+          "id": "2b2ac1d5-3aa5-47d6-adeb-e00bc5f0fd67",
+          "priority": "LOW",
+          "reportDate": "2026-10-20",
+          "requester": {
+            "department": "Library",
+            "email": "chantal@auca.ac.rw",
+            "firstName": "Chantal",
+            "id": "056101dc-973d-4f3d-a156-41702b3dc597",
+            "lastName": "Uwase",
+            "staffNumber": "ST-1023"
+          },
+          "status": "CANCELLED",
+          "technician": {
+            "email": "eric@auca.ac.rw",
+            "expertises": [
+              {
+                "id": "dd91d8f2-d90f-4ee8-b27d-835c5fc1103e",
+                "name": "Routing"
+              },
+              {
+                "id": "7860df7b-173d-4864-8591-ae9da3bcfade",
+                "name": "Wireless"
+              }
+            ],
+            "firstName": "Eric",
+            "id": "b85fc690-186e-43a4-b786-f4f620450c45",
+            "lastName": "Mugisha",
+            "location": {
+              "id": "3104b357-a319-40cb-8ab9-6230dcbe9e97",
+              "locationNumber": 1,
+              "name": "Office 1"
+            }
+          }
+        }
+      ]
+order: 1000

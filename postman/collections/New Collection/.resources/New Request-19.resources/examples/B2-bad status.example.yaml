@@ -1,0 +1,24 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/fault-tickets/by-status?status=NEVER
+  method: GET
+  queryParams:
+    status: NEVER
+response:
+  statusCode: 400
+  statusText: ""
+  headers:
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Sun, 01 Nov 2026 09:01:52 GMT
+    Connection: close
+  body:
+    type: json
+    content: |-
+      {
+        "timestamp": "2026-11-01T09:01:52.169Z",
+        "status": 400,
+        "error": "Bad Request",
+        "path": "/api/fault-tickets/by-status"
+      }
+order: 1000

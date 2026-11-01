@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8081/api/fault-tickets/save
+method: POST
+body:
+  type: json
+  content: '{"reportDate":"2026-10-05","status":"RESOLVED","description":"Core switch down in lab 3","priority":"HIGH","requester":{"id":"35314d4c-0795-4e83-aa2b-3ca16f9d076e"},"technician":{"id":"b85fc690-186e-43a4-b786-f4f620450c45"}}'
+examples: .resources/Ticket 1.resources/examples
+order: 17000

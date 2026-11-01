@@ -1,0 +1,20 @@
+$kind: http-example
+request:
+  url: http://localhost:8081/api/fault-tickets/save
+  method: POST
+  body:
+    type: json
+    content: '{"reportDate":"2026-11-28","status":"OPEN","description":"Wireless coverage gap","priority":"LOW","requester":{"id":"a4f08218-74b1-4b27-8ae2-22a703ed8884"},"technician":{"id":"7504cb35-3669-42b1-b721-32ad2dccbbd5"}}'
+response:
+  statusCode: 201
+  statusText: ""
+  headers:
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: "31"
+    Date: Sat, 31 Oct 2026 19:09:51 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+  body:
+    type: text
+    content: Fault ticket saved successfully
+order: 1000
